@@ -39,10 +39,12 @@ Two people on two different devices type the same **room code** and play against
 
 ## The look
 
-- **Three-dimensional look**: the board is tilted (not flat-on) and pieces are shaded/rendered to look like physical objects sitting on it, not flat icons — done with CSS (the styling language browsers use), no 3D graphics engine involved.
-- **Themes** — the person who creates an online room picks a visual theme that both players see. **For now, only one theme is being built: Wooden** (wood-textured board and pieces) — the user asked to simplify this rather than build all three up front. Black and white, and a Howl's Moving Castle–inspired theme (an original palette/motif in the film's spirit, not its actual copyrighted artwork), remain planned for later but are on hold until requested.
-- **Rotating the board**: when it isn't a player's turn, they can freely rotate/tilt the board with a drag to look at it from any angle. The instant it becomes their turn, the board snaps to face them, with their own pieces at the bottom.
-- **Sound effects**: a wooden "knock" sound plays whenever a piece is moved onto a square; a distinct "knocked over" sound plays whenever a piece is captured (taken off the board).
+Simplified at the user's request, to get the site live sooner:
+
+- **Flat board, Wooden theme only**: a plain, flat (not tilted/3D) board styled with wood-toned colors for the squares and pieces. No perspective tilt, no shading tricks to fake physical depth.
+- Since there's only one theme, there's no theme picker — every game just looks wooden by default. Black & White and a Howl's Moving Castle–inspired theme remain possible later, but aren't planned right now.
+
+**Dropped from scope entirely:** the three-dimensional look/tilt, free-rotating the board, auto-orienting it to the current player's side, and sound effects (wood-knock/capture sounds). All were cut by the user to prioritize shipping the working site. The board is simply flat and always shown the same way (White at the bottom) for every viewer, in every mode.
 
 ## Explicitly out of scope
 

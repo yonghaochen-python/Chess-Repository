@@ -36,25 +36,16 @@ Nothing user-visible yet; this phase proves the rulebook is correct and the depl
   - Files: `public/board.js`, `public/hotseat.js`, `public/index.html`, `public/style.css`
   - Definition of done: two people can play a complete legal game start to finish on one screen — castling, en passant, promotion (with a piece choice offered), check, checkmate, and stalemate all correctly enforced — and there is no way to attempt an illegal move (no illegal square is ever offered as a target).
 
-- [ ] **1.2 — Three-dimensional board and pieces**
+- [x] ~~**1.2 — Three-dimensional board and pieces**~~ — dropped from scope at the user's request; not being built.
+
+- [x] **1.3 — Wooden board styling**
   - Depends on: 1.1
-  - Files: `public/style.css`, `public/board.js`
-  - Definition of done: in a live game, the board reads as tilted/three-dimensional and pieces are shaded to look like physical objects, not flat icons.
+  - Files: `public/style.css`
+  - Definition of done: the board's squares and pieces are styled with wood-toned colors instead of the current generic light/dark squares. Flat (no 3D), no picker needed since it's the only look.
 
-- [ ] **1.3 — Theme system: Wooden only (for now)**
-  - Depends on: 1.2
-  - Files: `public/themes.js`, `public/assets/themes/*`
-  - Definition of done: the board and pieces render in the wooden theme, fully (no missing images). Built as a theme *system* (not hard-coded), so Black & White and the Howl's-inspired theme can be added later as additional entries without restructuring anything.
+- [x] ~~**1.4 — Free rotation when idle, auto-orient on your turn**~~ — dropped from scope at the user's request; not being built. The board always shows White at the bottom for every viewer.
 
-- [ ] **1.4 — Free rotation when idle, auto-orient on your turn**
-  - Depends on: 1.2
-  - Files: `public/board.js`, `public/style.css`
-  - Definition of done: dragging the board while it isn't your turn freely rotates/tilts it; the moment it becomes your turn, it snaps to face you with your pieces at the bottom.
-
-- [ ] **1.5 — Move and capture sound effects**
-  - Depends on: 1.1
-  - Files: `public/sounds.js`, `public/assets/sounds/*`
-  - Definition of done: a wood-knock sound plays on every move; a distinct "knocked over" sound plays on every capture.
+- [x] ~~**1.5 — Move and capture sound effects**~~ — dropped from scope at the user's request; not being built.
 
 ## Phase 2 — Vs Computer
 
@@ -75,10 +66,7 @@ Nothing user-visible yet; this phase proves the rulebook is correct and the depl
   - Files: `public/online.js`, `public/index.html`
   - Definition of done: two devices entering the same room code see each other's moves live; the first to join is White, the second is Black, anyone after that just watches; refreshing the page rejoins the same game instead of losing it; a "New game" button resets the board for both players.
 
-- [ ] **3.3 — Bring theme, 3D look, and sound into Online mode**
-  - Depends on: 3.2, 1.2, 1.3, 1.5
-  - Files: `public/online.js`, `src/room.js`
-  - Definition of done: the room creator's theme choice is sent to the server, stored with the room, and applied for everyone who joins that room; look, rotation, and sound behave the same as in Hot-seat.
+- [x] ~~**3.3 — Bring theme and 3D look into Online mode**~~ — no longer needed: with only one flat theme and no rotation, Online mode already looks identical to Hot-seat once 3.2 is done. Nothing extra to build here.
 
 ---
 
