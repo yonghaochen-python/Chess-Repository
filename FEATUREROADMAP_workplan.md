@@ -14,17 +14,17 @@ Each task (after the very first setup commit) gets its own branch, commit, push,
 
 Nothing user-visible yet; this phase proves the rulebook is correct and the deployment pipeline actually works, before building anything on top of either.
 
-- [ ] **0.1 — Scaffold the project**
+- [x] **0.1 — Scaffold the project**
   - Depends on: nothing
   - Files: `package.json`, `.gitignore`, empty `public/`, `src/`, `tests/` folders
   - Definition of done: `npm install` runs with no errors; the folder layout matches the "How it's built" section of `ProductSpec.md`.
 
-- [ ] **0.2 — Write the rulebook (`rules.js`) and prove it with a move-count test**
+- [x] **0.2 — Write the rulebook (`rules.js`) and prove it with a move-count test**
   - Depends on: 0.1
   - Files: `public/rules.js`, `tests/perft.js`
   - Definition of done: running `node tests/perft.js` reports that, from the starting position, there are exactly **20** legal move sequences 1 move deep, **400** two moves deep, and **8,902** three moves deep, with no mismatches. This must pass before any board, AI, or server code is written.
 
-- [ ] **0.3 — Deploy a placeholder page to prove the Cloudflare pipeline works**
+- [x] **0.3 — Deploy a placeholder page to prove the Cloudflare pipeline works**
   - Depends on: 0.1
   - Files: `wrangler.jsonc`, `public/index.html` (placeholder only)
   - Definition of done: pushing to `main` results in a working public URL (shown in the Cloudflare dashboard) that loads the placeholder page — confirms static hosting and auto-deploy both work before anything real is riding on them.
