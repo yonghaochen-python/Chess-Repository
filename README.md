@@ -33,11 +33,4 @@ This repo is connected to a Cloudflare Workers project through GitHub. Every tim
 
 ## How this project gets built
 
-Work happens one task at a time from `FEATUREROADMAP_workplan.md`. For each task:
-
-1. A new branch is created — a separate line of work that doesn't touch the live site until it's merged back in.
-2. Changes are committed (saved as a labeled snapshot) with a message naming the task.
-3. The branch is pushed (uploaded) to GitHub.
-4. A pull request (PR) is opened — a request to merge that branch into `main`, which is where the changes can be reviewed before anything goes live.
-
-Merging a PR into `main` makes it live immediately, since Cloudflare redeploys on every push to `main`. The first merge will be confirmed before it happens; after that, the same pattern repeats for each task.
+Work happens one task at a time from `FEATUREROADMAP_workplan.md`. Each finished task is committed (saved as a labeled snapshot) with a message naming it, and pushed (uploaded) straight to `main` — which goes live immediately, since Cloudflare redeploys on every push to `main`. No branches or pull requests for this project.

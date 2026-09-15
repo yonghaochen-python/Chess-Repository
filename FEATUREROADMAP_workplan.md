@@ -6,7 +6,7 @@ Every task below is a checkbox with what it needs first (**Depends on**), which 
 
 This is designed to be picked up one task at a time, in any session: say which unchecked task (by number) to run next, and only that task's dependencies need to already be checked off. When a task is finished, its box gets checked here as part of that task's own commit.
 
-Each task (after the very first setup commit) gets its own branch, commit, push, and pull request — nothing merges into `main` (which goes live immediately) without confirming first.
+Each finished task is committed and pushed straight to `main`, which goes live immediately.
 
 ---
 
