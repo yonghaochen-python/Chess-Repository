@@ -41,10 +41,10 @@ Nothing user-visible yet; this phase proves the rulebook is correct and the depl
   - Files: `public/style.css`, `public/board.js`
   - Definition of done: in a live game, the board reads as tilted/three-dimensional and pieces are shaded to look like physical objects, not flat icons.
 
-- [ ] **1.3 — Theme system: Black & White, Wooden, Howl's-inspired**
+- [ ] **1.3 — Theme system: Wooden only (for now)**
   - Depends on: 1.2
   - Files: `public/themes.js`, `public/assets/themes/*`
-  - Definition of done: a theme picker instantly swaps board and piece appearance; all three themes are complete (no missing images) and visually distinct.
+  - Definition of done: the board and pieces render in the wooden theme, fully (no missing images). Built as a theme *system* (not hard-coded), so Black & White and the Howl's-inspired theme can be added later as additional entries without restructuring anything.
 
 - [ ] **1.4 — Free rotation when idle, auto-orient on your turn**
   - Depends on: 1.2

@@ -40,10 +40,7 @@ Two people on two different devices type the same **room code** and play against
 ## The look
 
 - **Three-dimensional look**: the board is tilted (not flat-on) and pieces are shaded/rendered to look like physical objects sitting on it, not flat icons — done with CSS (the styling language browsers use), no 3D graphics engine involved.
-- **Themes** — the person who creates an online room picks a visual theme that both players see:
-  - **Black and white** — a plain, classic look.
-  - **Wooden** — wood-textured board and pieces.
-  - **Howl's Moving Castle–inspired** — an original color palette and motif in the spirit of the film's warm, whimsical art style. This is **not** the film's actual artwork — reusing copyrighted artwork isn't something this project can do, so this theme is an original design inspired by it instead. Flagging this now rather than changing it quietly.
+- **Themes** — the person who creates an online room picks a visual theme that both players see. **For now, only one theme is being built: Wooden** (wood-textured board and pieces) — the user asked to simplify this rather than build all three up front. Black and white, and a Howl's Moving Castle–inspired theme (an original palette/motif in the film's spirit, not its actual copyrighted artwork), remain planned for later but are on hold until requested.
 - **Rotating the board**: when it isn't a player's turn, they can freely rotate/tilt the board with a drag to look at it from any angle. The instant it becomes their turn, the board snaps to face them, with their own pieces at the bottom.
 - **Sound effects**: a wooden "knock" sound plays whenever a piece is moved onto a square; a distinct "knocked over" sound plays whenever a piece is captured (taken off the board).
 
