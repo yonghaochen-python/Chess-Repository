@@ -1,11 +1,14 @@
-// Glue for Hot-seat mode: two people, one screen, taking turns. Owns the
-// current position and wires board.js's clicks into rules.js's moves.
+// Glue for Vs Computer mode: the human plays White, the browser plays
+// Black using ai.js. The human's move enforcement is identical to
+// hot-seat; after it, the computer replies automatically.
 import { createInitialPosition, generateLegalMovesFrom, applyMove } from './rules.js';
 import { renderBoard } from './board.js';
+import { chooseComputerMove } from './ai.js';
 
 const PROMOTION_SYMBOLS = { q: '♛', r: '♜', b: '♝', n: '♞' };
+const HUMAN_COLOR = 'w';
 
-export function startHotseat() {
+export function startVsComputer() {
   const boardEl = document.getElementById('board');
   const statusEl = document.getElementById('status');
   const newGameBtn = document.getElementById('new-game');
@@ -15,18 +18,18 @@ export function startHotseat() {
   let selected = null;
   let legalTargets = [];
   let gameOver = false;
-  let pendingPromotion = null; // { moves }
+  let pendingPromotion = null;
 
   function colorName(color) {
     return color === 'w' ? 'White' : 'Black';
   }
 
   function describeStatus(result) {
-    if (!result) return `${colorName(position.turn)} to move.`;
+    if (!result) return "White to move (you're White).";
     if (result.isCheckmate) return `Checkmate — ${colorName(result.position.turn === 'w' ? 'b' : 'w')} wins!`;
     if (result.isStalemate) return 'Stalemate — the game is a draw.';
     if (result.isCheck) return `${colorName(result.position.turn)} is in check.`;
-    return `${colorName(result.position.turn)} to move.`;
+    return position.turn === HUMAN_COLOR ? 'Your move.' : "Computer is thinking...";
   }
 
   function render() {
@@ -35,7 +38,7 @@ export function startHotseat() {
   }
 
   function handleSquareClick(square) {
-    if (gameOver || pendingPromotion) return;
+    if (gameOver || pendingPromotion || position.turn !== HUMAN_COLOR) return;
 
     if (selected !== null && legalTargets.includes(square)) {
       const moves = generateLegalMovesFrom(position, selected).filter((m) => m.to === square);
@@ -69,6 +72,14 @@ export function startHotseat() {
     gameOver = result.isCheckmate || result.isStalemate;
     statusEl.textContent = describeStatus(result);
     render();
+
+    if (!gameOver && position.turn !== HUMAN_COLOR) {
+      // A tiny delay lets "Computer is thinking..." actually paint first.
+      setTimeout(() => {
+        const computerMove = chooseComputerMove(position, 2);
+        commitMove(computerMove);
+      }, 50);
+    }
   }
 
   function renderPromotionPicker() {

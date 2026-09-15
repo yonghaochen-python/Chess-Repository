@@ -49,7 +49,7 @@ Nothing user-visible yet; this phase proves the rulebook is correct and the depl
 
 ## Phase 2 — Vs Computer
 
-- [ ] **2.1 — Computer opponent (minimax, alpha-beta pruning, depth 2)**
+- [x] **2.1 — Computer opponent (minimax, alpha-beta pruning, depth 2)**
   - Depends on: 1.1
   - Files: `public/ai.js`, `public/vscomputer.js`
   - Definition of done: from any legal position reachable in a real game, the computer always replies with a legal move in under 2 seconds.

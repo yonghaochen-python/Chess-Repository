@@ -8,10 +8,26 @@
 </head>
 <body>
   <h1>Chezz</h1>
-  <p id="status"></p>
-  <div id="board"></div>
-  <div id="promotion-picker" hidden></div>
-  <button id="new-game">New game</button>
-  <script type="module" src="/hotseat.js"></script>
+
+  <div id="menu">
+    <button data-mode="hotseat">Hot-seat</button>
+    <button data-mode="vscomputer">Vs Computer</button>
+    <button data-mode="online">Online</button>
+  </div>
+
+  <div id="online-join" hidden>
+    <input id="room-code-input" placeholder="Room code" maxlength="8" />
+    <button id="join-room-btn">Join / Create room</button>
+  </div>
+
+  <div id="game" hidden>
+    <p id="room-code-display" hidden></p>
+    <p id="status"></p>
+    <div id="board"></div>
+    <div id="promotion-picker" hidden></div>
+    <button id="new-game">New game</button>
+  </div>
+
+  <script type="module" src="/app.js"></script>
 </body>
 </html>
