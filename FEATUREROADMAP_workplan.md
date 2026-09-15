@@ -31,7 +31,7 @@ Nothing user-visible yet; this phase proves the rulebook is correct and the depl
 
 ## Phase 1 — Hot-seat (ships live first)
 
-- [ ] **1.1 — Playable board with full rule enforcement**
+- [x] **1.1 — Playable board with full rule enforcement**
   - Depends on: 0.2, 0.3
   - Files: `public/board.js`, `public/hotseat.js`, `public/index.html`, `public/style.css`
   - Definition of done: two people can play a complete legal game start to finish on one screen — castling, en passant, promotion (with a piece choice offered), check, checkmate, and stalemate all correctly enforced — and there is no way to attempt an illegal move (no illegal square is ever offered as a target).
