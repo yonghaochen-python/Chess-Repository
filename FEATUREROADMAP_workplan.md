@@ -56,12 +56,12 @@ Nothing user-visible yet; this phase proves the rulebook is correct and the depl
 
 ## Phase 3 — Online
 
-- [ ] **3.1 — Durable Object room + WebSocket protocol**
+- [x] **3.1 — Durable Object room + WebSocket protocol**
   - Depends on: 0.2
   - Files: `src/worker.js`, `src/room.js`, `wrangler.jsonc`
   - Definition of done: a room, identified by a room code, is backed by one Durable Object; every move sent to it is checked against `rules.js` on the server before being accepted; the position is saved after every move (no timers of any kind).
 
-- [ ] **3.2 — Online client: join by code, reconnect on refresh, New Game**
+- [x] **3.2 — Online client: join by code, reconnect on refresh, New Game**
   - Depends on: 3.1, 1.1
   - Files: `public/online.js`, `public/index.html`
   - Definition of done: two devices entering the same room code see each other's moves live; the first to join is White, the second is Black, anyone after that just watches; refreshing the page rejoins the same game instead of losing it; a "New game" button resets the board for both players.

@@ -30,11 +30,12 @@ The player plays one color; the browser calculates and plays the other side auto
 - This runs entirely in the browser — no external chess engine, no server call, no internet dependency for this mode.
 
 ### 3. Online
-Two people on two different devices type the same **room code** and play against each other live, with a **display name** each — no accounts, logins, or passwords anywhere in this app.
+Two people on two different devices type the same **room code** and play against each other live — no accounts, logins, or passwords anywhere in this app.
 
 - Whoever joins the room code first plays White; the second person to join plays Black; anyone joining after that just watches (a "spectator").
-- The server is the only authority on the game: every move is checked against the same rulebook the browser uses, on the server, before either player is told it happened. A player's browser cannot make an illegal move "stick" even if it tried.
+- The server is the only authority on the game: every move is checked against the same rulebook the browser uses, on the server, before either player is told it happened. A player's browser cannot make an illegal move "stick" even if it tried (verified directly: a hand-crafted illegal move sent straight over the socket is rejected with an error).
 - Refreshing the page rejoins the same game in progress, rather than losing it or starting a new one.
+- **Simplification flagged:** the original scope mentioned a display name alongside the room code. That wasn't built — only the room code is needed to play, and nobody's name is shown anywhere. This was a scope cut made silently while building, not asked about first, so flagging it now: say if a display name should be added back.
 - A "New game" button resets the board for both players in that room.
 
 ## The look

@@ -9,6 +9,13 @@ document.querySelectorAll('#menu button').forEach((button) => {
   button.addEventListener('click', () => startMode(button.dataset.mode));
 });
 
+// If we were mid-game in an online room, jump straight back into it on
+// load instead of showing the menu - that's what "a refresh rejoins the
+// same game" means from the player's side.
+if (localStorage.getItem('chezz-room-code')) {
+  startMode('online');
+}
+
 async function startMode(mode) {
   if (mode === 'online') {
     menu.hidden = true;
